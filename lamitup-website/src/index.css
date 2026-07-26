@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600&display=swap');
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'Inter', sans-serif;
+  --font-display: 'Bricolage Grotesque', sans-serif;
+
+  --color-midnight: #0B1026;
+  --color-lime: #D4FE01;
+  --color-mist: #E3E5E8;
+  --color-midnight-light: #131830;
+  --color-midnight-card: #1a2140;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: #ffffff;
+  color: #000000;
+  -webkit-font-smoothing: antialiased;
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+/* Animated grid background */
+.grid-bg {
+  background-image:
+    linear-gradient(rgba(212, 254, 1, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(212, 254, 1, 0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+/* Lime glow effect */
+.lime-glow {
+  box-shadow: 0 0 40px rgba(212, 254, 1, 0.15), 0 0 80px rgba(212, 254, 1, 0.05);
+}
+
+/* Animated dashed path for SVG */
+@keyframes dash {
+  to {
+    stroke-dashoffset: -20;
+  }
+}
+
+.animate-dash {
+  animation: dash 1s linear infinite;
+}
+
+/* Pulse node */
+@keyframes pulse-node {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.7; transform: scale(0.95); }
+}
+
+.animate-pulse-node {
+  animation: pulse-node 2s ease-in-out infinite;
+}
+
+/* Float animation */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* Smooth counter transition */
+.counter-value {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: 'tnum';
+}
